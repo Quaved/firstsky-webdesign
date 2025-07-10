@@ -1,28 +1,39 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Users, Trophy, Zap, Shield, Copy, ExternalLink, Play, MessageCircle, ShoppingBag, Pickaxe } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import Head from "next/head"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Users,
+  Trophy,
+  Zap,
+  Shield,
+  Copy,
+  ExternalLink,
+  Play,
+  MessageCircle,
+  ShoppingBag,
+  Pickaxe,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
 
 export default function FirstSkyLanding() {
-  const [copied, setCopied] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
+  const [copied, setCopied] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const copyIP = () => {
-    navigator.clipboard.writeText("play.firstsky.net")
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+    navigator.clipboard.writeText("play.firstsky.net");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <>
@@ -39,13 +50,22 @@ export default function FirstSkyLanding() {
               </span>
             </div>
             <div className="hidden md:flex items-center justify-center space-x-6 flex-1">
-              <Link href="#features" className="hover:text-cyan-400 transition-colors">
+              <Link
+                href="#features"
+                className="hover:text-cyan-400 transition-colors"
+              >
                 Vote
               </Link>
-              <Link href="#gameplay" className="hover:text-cyan-400 transition-colors">
+              <Link
+                href="#gameplay"
+                className="hover:text-cyan-400 transition-colors"
+              >
                 Boutique
               </Link>
-              <Link href="#community" className="hover:text-cyan-400 transition-colors">
+              <Link
+                href="#community"
+                className="hover:text-cyan-400 transition-colors"
+              >
                 Communauté
               </Link>
             </div>
@@ -124,9 +144,13 @@ export default function FirstSkyLanding() {
 
             {/* IP Address */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 mb-8 border border-slate-600">
-              <div className="text-sm text-slate-400 mb-2">Adresse IP du serveur</div>
+              <div className="text-sm text-slate-400 mb-2">
+                Adresse IP du serveur
+              </div>
               <div className="flex items-center justify-center space-x-4">
-                <code className="text-2xl md:text-3xl font-mono text-cyan-400 font-bold">play.firstsky.net</code>
+                <code className="text-2xl md:text-3xl font-mono text-cyan-400 font-bold">
+                  play.firstsky.net
+                </code>
                 <Button
                   onClick={copyIP}
                   variant="outline"
@@ -168,8 +192,10 @@ export default function FirstSkyLanding() {
                 Une Aventure Unique Depuis 2021
               </h2>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-                FirstSky offre aux joueurs de tous niveaux une aventure passionnante où chacun peut s'amuser avec ses
-                amis tout en rivalisant pour atteindre les sommets des différents classements.
+                FirstSky offre aux joueurs de tous niveaux une aventure
+                passionnante où chacun peut s'amuser avec ses amis tout en
+                rivalisant pour atteindre les sommets des différents
+                classements.
               </p>
             </div>
 
@@ -180,11 +206,14 @@ export default function FirstSkyLanding() {
                     <div className="bg-red-500/20 p-3 rounded-lg mr-4">
                       <Pickaxe className="h-6 w-6 text-red-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">OneBlock Réinventé</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      OneBlock Réinventé
+                    </h3>
                   </div>
                   <p className="text-slate-300">
-                    Commencez sur un unique bloc flottant dans le vide. Minez, développez et créez votre empire céleste
-                    avec des défis uniques.
+                    Commencez sur un unique bloc flottant dans le vide. Minez,
+                    développez et créez votre empire céleste avec des défis
+                    uniques.
                   </p>
                 </CardContent>
               </Card>
@@ -195,11 +224,14 @@ export default function FirstSkyLanding() {
                     <div className="bg-green-500/20 p-3 rounded-lg mr-4">
                       <Zap className="h-6 w-6 text-green-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white"> Farm2Win Équilibré</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      {" "}
+                      Farm2Win Équilibré
+                    </h3>
                   </div>
                   <p className="text-slate-300">
-                    Plus vous farmez, plus vous progressez ! Notre économie équilibrée récompense l'effort et la
-                    stratégie.
+                    Plus vous farmez, plus vous progressez ! Notre économie
+                    équilibrée récompense l'effort et la stratégie.
                   </p>
                 </CardContent>
               </Card>
@@ -210,10 +242,13 @@ export default function FirstSkyLanding() {
                     <div className="bg-yellow-500/20 p-3 rounded-lg mr-4">
                       <Trophy className="h-6 w-6 text-yellow-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Six Classements</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      Six Classements
+                    </h3>
                   </div>
                   <p className="text-slate-300">
-                    Montrez vos compétences dans nos six classements distincts et dominez l'économie du serveur.
+                    Montrez vos compétences dans nos six classements distincts
+                    et dominez l'économie du serveur.
                   </p>
                 </CardContent>
               </Card>
@@ -224,7 +259,10 @@ export default function FirstSkyLanding() {
                     <div className="bg-purple-500/20 p-3 rounded-lg mr-4">
                       <Shield className="h-6 w-6 text-purple-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white"> Événements Épiques</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      {" "}
+                      Événements Épiques
+                    </h3>
                   </div>
                   <p className="text-slate-300">
                     {
@@ -240,10 +278,13 @@ export default function FirstSkyLanding() {
                     <div className="bg-blue-500/20 p-3 rounded-lg mr-4">
                       <Users className="h-6 w-6 text-blue-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Java &amp; Bedrock</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      Java &amp; Bedrock
+                    </h3>
                   </div>
                   <p className="text-slate-300">
-                    Accessible depuis toutes les plateformes ! Rejoignez vos amis peu importe leur version de Minecraft.
+                    Accessible depuis toutes les plateformes ! Rejoignez vos
+                    amis peu importe leur version de Minecraft.
                   </p>
                 </CardContent>
               </Card>
@@ -254,10 +295,13 @@ export default function FirstSkyLanding() {
                     <div className="bg-cyan-500/20 p-3 rounded-lg mr-4">
                       <ShoppingBag className="h-6 w-6 text-cyan-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Shop Intégré</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      Shop Intégré
+                    </h3>
                   </div>
                   <p className="text-slate-300">
-                    Échangez avec d'autres joueurs et construisez votre richesse pour dominer l'économie du serveur.
+                    Échangez avec d'autres joueurs et construisez votre richesse
+                    pour dominer l'économie du serveur.
                   </p>
                 </CardContent>
               </Card>
@@ -273,7 +317,8 @@ export default function FirstSkyLanding() {
                 Aperçu du Gameplay
               </h2>
               <p className="text-xl text-slate-300">
-                Découvrez l'univers unique de FirstSky à travers ces captures d'écran
+                Découvrez l'univers unique de FirstSky à travers ces captures
+                d'écran
               </p>
             </div>
 
@@ -293,7 +338,9 @@ export default function FirstSkyLanding() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-white font-bold mb-2">Capture {i}</h3>
-                      <p className="text-slate-300 text-sm">Découvrez les mécaniques uniques de FirstSky</p>
+                      <p className="text-slate-300 text-sm">
+                        Découvrez les mécaniques uniques de FirstSky
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -309,16 +356,20 @@ export default function FirstSkyLanding() {
               Rejoignez Notre Communauté
             </h2>
             <p className="text-xl text-slate-300 mb-12">
-              Plus de 2700 joueurs nous font déjà confiance. Rejoignez l'aventure FirstSky dès maintenant !
+              Plus de 2700 joueurs nous font déjà confiance. Rejoignez
+              l'aventure FirstSky dès maintenant !
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 border-purple-500/30 hover:border-purple-400 transition-all duration-300">
                 <CardContent className="p-8 text-center">
                   <MessageCircle className="h-16 w-16 text-purple-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-4">Discord</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Discord
+                  </h3>
                   <p className="text-slate-300 mb-6">
-                    Rejoignez notre communauté Discord active avec plus de 2700 membres !
+                    Rejoignez notre communauté Discord active avec plus de 2700
+                    membres !
                   </p>
                   <Button className="bg-purple-600 hover:bg-purple-700 text-white">
                     <ExternalLink className="h-4 w-4 mr-2" />
@@ -330,8 +381,12 @@ export default function FirstSkyLanding() {
               <Card className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-green-500/30 hover:border-green-400 transition-all duration-300">
                 <CardContent className="p-8 text-center">
                   <ShoppingBag className="h-16 w-16 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-4">Boutique</h3>
-                  <p className="text-slate-300 mb-6">Soutenez le serveur et obtenez des avantages exclusifs !</p>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Boutique
+                  </h3>
+                  <p className="text-slate-300 mb-6">
+                    Soutenez le serveur et obtenez des avantages exclusifs !
+                  </p>
                   <Button className="bg-green-600 hover:bg-green-700 text-white">
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Visiter la Boutique
@@ -352,29 +407,44 @@ export default function FirstSkyLanding() {
                     FirstSky
                   </span>
                 </div>
-                <p className="text-slate-400">Le meilleur serveur Minecraft Skyblock OneBlock français depuis 2021.</p>
+                <p className="text-slate-400">
+                  Le meilleur serveur Minecraft Skyblock OneBlock français
+                  depuis 2021.
+                </p>
               </div>
 
               <div>
                 <h4 className="text-white font-bold mb-4">Liens Rapides</h4>
                 <ul className="space-y-2 text-slate-400">
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Accueil
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Règlement
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Wiki
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Support
                     </Link>
                   </li>
@@ -385,22 +455,34 @@ export default function FirstSkyLanding() {
                 <h4 className="text-white font-bold mb-4">Communauté</h4>
                 <ul className="space-y-2 text-slate-400">
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Discord
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Forum
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Vote
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-cyan-400 transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-cyan-400 transition-colors"
+                    >
                       Classements
                     </Link>
                   </li>
@@ -427,5 +509,5 @@ export default function FirstSkyLanding() {
         </footer>
       </div>
     </>
-  )
+  );
 }
